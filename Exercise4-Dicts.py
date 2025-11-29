@@ -1,20 +1,21 @@
-inventory = {
-    "Laptop": 15,
-    "Phone": 8,
-    "Tablet": 12,
-    "Headphones": 25,
-    "Charger": 5
+library = {
+    "Data Structures": 20,
+    "Machine Learning": 6,
+    "Operating Systems": 12,
+    "Computer Networks": 18,
+    "Cybersecurity": 4
 }
 
-inventory["Smartwatch"] = 10
-inventory["Phone"] = 12
+library["Artificial Intelligence"] = 9
 
-def low_stock(inv):
-    return {k:v for k,v in inv.items() if v < 10}
+library["Machine Learning"] = 10
 
-del inventory["Charger"]
+def low_stock(lib):
+    return {title:qty for title, qty in lib.items() if qty < 10}
 
-for product, qty in inventory.items():
-    print(product, ":", qty)
+del library["Cybersecurity"]
 
-print("Low stock products:", low_stock(inventory))
+for title, qty in library.items():
+    print(title, ":", qty)
+
+print("Low stock books:", low_stock(library))
